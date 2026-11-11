@@ -18,7 +18,7 @@ You can easily let Nextcloud redirect your user to the first app in their person
 
 Users will now get redirected to the first app of the default order or to the first app of the user order.
     </description>
-    <version>0.15.0</version>
+    <version>0.16.0</version>
     <licence>agpl</licence>
     <author mail="jus@bitgrid.net">Julius Härtl</author>
     <namespace>AppOrder</namespace>
@@ -27,7 +27,7 @@ Users will now get redirected to the first app of the default order or to the fi
     <repository type="git">https://github.com/juliushaertl/apporder.git</repository>
     <screenshot>https://download.bitgrid.net/nextcloud/apporder/apporder.png</screenshot>
     <dependencies>
-        <nextcloud min-version="20" max-version="24"/>
+        <nextcloud min-version="28" max-version="35"/>
     </dependencies>
     <settings>
         <admin>OCA\AppOrder\Settings\AdminSettings</admin>

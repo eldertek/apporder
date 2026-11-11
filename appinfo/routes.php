@@ -26,6 +26,7 @@ return [
 		['name' => 'app#index', 'url' => '/', 'verb' => 'GET'],
 		['name' => 'settings#getOrder', 'url' => '/getOrder', 'verb' => 'GET'],
 		['name' => 'settings#savePersonal', 'url' => '/savePersonal', 'verb' => 'POST'],
+		['name' => 'settings#resetPersonal', 'url' => '/resetPersonal', 'verb' => 'POST'],
 		['name' => 'settings#saveDefaultOrder', 'url' => '/saveDefaultOrder', 'verb' => 'POST'],
 		['name' => 'settings#savePersonalHidden', 'url' => '/savePersonalHidden', 'verb' => 'POST'],
 		['name' => 'settings#saveDefaultHidden', 'url' => '/saveDefaultHidden', 'verb' => 'POST'],

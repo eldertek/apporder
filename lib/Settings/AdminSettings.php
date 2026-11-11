@@ -32,10 +32,10 @@ class AdminSettings implements ISettings {
 
 	/** @var IConfig */
 	private $config;
-	/** @var \OC_Defaults */
+	/** @var \OCP\Defaults */
 	private $defaults;
 
-	public function __construct(IConfig $config, \OC_Defaults $defaults) {
+	public function __construct(IConfig $config, \OCP\Defaults $defaults) {
 		$this->config = $config;
 		$this->defaults = $defaults;
 	}
@@ -45,7 +45,7 @@ class AdminSettings implements ISettings {
 	 * @since 9.1
 	 */
 	public function getForm() {
-		$response = \OC::$server->query(\OCA\AppOrder\Controller\SettingsController::class)->adminIndex();
+		$response = \OCP\Server::get(\OCA\AppOrder\Controller\SettingsController::class)->adminIndex();
 		return $response;
 	}
 

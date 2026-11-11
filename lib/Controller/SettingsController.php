@@ -153,6 +153,21 @@ class SettingsController extends Controller {
 	}
 
 	/**
+	 * Reset order and hidden for current user to revert to global default
+	 *
+	 * @NoAdminRequired
+	 * @return array response
+	 */
+	public function resetPersonal() {
+		$this->appConfig->setUserValue('order', $this->userId, '');
+		$this->appConfig->setUserValue('hidden', $this->userId, '');
+		return array(
+			'status' => 'success',
+			'data' => array('message' => 'User order reset to default successfully.')
+		);
+	}
+
+	/**
 	 * Admin: save default hidden
 	 *
 	 * @param $hidden

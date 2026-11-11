@@ -32,12 +32,12 @@ class PersonalSettings implements ISettings {
 
 	/** @var IConfig */
 	private $config;
-	/** @var \OC_Defaults */
+	/** @var \OCP\Defaults */
 	private $defaults;
 	/** @var indicates admin-forced order */
 	private $force_admin_order;
 
-	public function __construct(IConfig $config, $appName, \OC_Defaults $defaults) {
+	public function __construct(IConfig $config, $appName, \OCP\Defaults $defaults) {
 		$this->config = $config;
 		$this->defaults = $defaults;
 		$this->force_admin_order = json_decode($this->config->getAppValue($appName, 'force')) ?? false;
@@ -51,7 +51,7 @@ class PersonalSettings implements ISettings {
 		if ($this->force_admin_order) {
 			$response = null;
 		} else {
-			$response = \OC::$server->query(\OCA\AppOrder\Controller\SettingsController::class)->personalIndex();
+			$response = \OCP\Server::get(\OCA\AppOrder\Controller\SettingsController::class)->personalIndex();
 		}
 		return $response;
 	}
